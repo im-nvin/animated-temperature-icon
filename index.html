@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animated temperature icon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+
+        .fa {
+            font-size: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <span id="temp" class="fa"></span>
+    </div>
+
+    <script>
+        const tempload = () => {
+            const temp = document.getElementById('temp');
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2ca"
+                temp.style.color = "white"
+            }, 1000)
+
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2c9"
+                temp.style.color = "#eab63c"
+            }, 2000)
+
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2c8"
+                temp.style.color = "yellow"
+            }, 3000)
+
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2c7"
+                temp.style.color = "red"
+            }, 4000)
+        }
+        tempload()
+        setInterval(tempload, 5000)
+    </script>
+</body>
+
+</html>
